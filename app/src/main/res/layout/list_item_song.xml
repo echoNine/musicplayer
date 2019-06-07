@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:background="#ED6B6B6B">
+
+    <TextView
+        android:id="@+id/item_song_order"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/item_song_singer"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:text="序号"
+        android:textColor="#B4B4B4"
+        android:textSize="18sp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/item_song_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="歌曲名"
+            android:textColor="#C7C4C4"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/item_song_singer"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_toLeftOf="@+id/item_song_duration"
+            android:ellipsize="end"
+            android:gravity="bottom"
+            android:maxLines="1"
+            android:text="歌手"
+            android:textColor="#C7C4C4"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/item_song_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="bottom"
+            android:text="歌曲时间"
+            android:textColor="#C7C4C4"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</LinearLayout>

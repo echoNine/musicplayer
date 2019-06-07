@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">音乐库</string>
+    <string name="back">返回</string>
+    <string name="submit">提交</string>
+    <string name="commentator_label">输入你的昵称：</string>
+    <string name="content_label">写下你的想法：</string>
+    <string name="empty_comment_list">暂无评论</string>
+    <string name="add_comment">新增评论</string>
+    <string name="show_subtitle">显示评论数</string>
+    <string name="hide_subtitle">隐藏评论数</string>
+    <string name="subtitle_format">%1$d comments</string>
+    <plurals name="subtitle_plural">
+        <item quantity="one">%1$s comment</item>
+        <item quantity="other">%1$s comments</item>
+    </plurals>
+</resources>
