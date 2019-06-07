@@ -39,7 +39,7 @@ public class SongLab {
         one.setDuration("04:05");
         String resone = "";
         try{
-            InputStream inputTwo =  context.getResources().openRawResource(R.raw.one);
+            InputStream inputTwo =  context.getResources().openRawResource(R.raw.first);
             int length = inputTwo.available();
             byte [] buffer = new byte[length];
             inputTwo.read(buffer);

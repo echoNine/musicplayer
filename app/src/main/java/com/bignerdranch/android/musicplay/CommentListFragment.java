@@ -86,7 +86,7 @@ public class CommentListFragment extends Fragment {
             case R.id.new_comment:
                 Comment comment = new Comment();
                 comment.setSong(this.songName);
-                Intent intent = CommentPagerActivity
+                Intent intent = CommentActivity
                         .newIntent(getActivity(), comment);
                 startActivity(intent);
                 return true;
@@ -164,7 +164,7 @@ public class CommentListFragment extends Fragment {
 
         @Override
         public void onClick(View view) {
-            Intent intent = CommentPagerActivity.newIntent(getActivity(), mComment);
+            Intent intent = CommentActivity.newIntent(getActivity(), mComment);
             startActivity(intent);
         }
     }

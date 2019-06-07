@@ -8,7 +8,7 @@ import com.bignerdranch.android.musicplay.dao.Comment;
 
 import java.util.List;
 
-public class CommentPagerActivity extends SingleFragmentActivity {
+public class CommentActivity extends SingleFragmentActivity {
     private static final String EXTRA_COMMENT_ID = "com.bignerdranch.android.musicplay.comment_id";
 
     private List<Comment> mComments;
@@ -19,7 +19,7 @@ public class CommentPagerActivity extends SingleFragmentActivity {
         Bundle bundle=new Bundle();
         bundle.putString("song", comment.getSong());
         bundle.putSerializable("comment", comment);
-        Intent intent = new Intent(packageContext,CommentPagerActivity.class);
+        Intent intent = new Intent(packageContext, CommentActivity.class);
         intent.putExtras(bundle);
         intent.putExtra(EXTRA_COMMENT_ID,comment.getId());
         return intent;

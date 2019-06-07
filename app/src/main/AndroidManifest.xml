@@ -31,7 +31,7 @@
         </activity>
 
         <activity
-            android:name=".CommentPagerActivity">
+            android:name=".CommentActivity">
         </activity>
     </application>
 

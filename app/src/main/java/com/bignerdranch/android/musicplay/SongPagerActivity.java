@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+
 import com.bignerdranch.android.musicplay.dao.Song;
 import com.bignerdranch.android.musicplay.lab.SongLab;
 
@@ -20,11 +21,12 @@ public class SongPagerActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     private List<Song> mSongs;
 
-    public static Intent newIntent(Context packageContext, UUID songId){
-        Intent intent = new Intent(packageContext,SongPagerActivity.class);
-        intent.putExtra(EXTRA_SONG_ID,songId);
+    public static Intent newIntent(Context packageContext, UUID songId) {
+        Intent intent = new Intent(packageContext, SongPagerActivity.class);
+        intent.putExtra(EXTRA_SONG_ID, songId);
         return intent;
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +51,8 @@ public class SongPagerActivity extends AppCompatActivity {
             }
         });
 
-        for (int i = 0;i<mSongs.size();i++){
-            if (mSongs.get(i).getId().equals(songId)){
+        for (int i = 0; i < mSongs.size(); i++) {
+            if (mSongs.get(i).getId().equals(songId)) {
                 mViewPager.setCurrentItem(i);
                 break;
             }

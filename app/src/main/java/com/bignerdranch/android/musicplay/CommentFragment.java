@@ -36,7 +36,7 @@ public class CommentFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mComment = ((CommentPagerActivity) getActivity()).getmComment();
+        mComment = ((CommentActivity) getActivity()).getmComment();
         setHasOptionsMenu(true);
     }
 
