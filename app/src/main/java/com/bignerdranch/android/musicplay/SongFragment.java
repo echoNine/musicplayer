@@ -1,6 +1,7 @@
 package com.bignerdranch.android.musicplay;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.method.ScrollingMovementMethod;
@@ -17,6 +18,8 @@ import java.util.UUID;
 
 import com.bignerdranch.android.musicplay.dao.Song;
 import com.bignerdranch.android.musicplay.lab.SongLab;
+
+import static com.bignerdranch.android.musicplay.SongPagerActivity.mPlayer;
 
 public class SongFragment extends Fragment {
 
@@ -44,6 +47,13 @@ public class SongFragment extends Fragment {
         super.onCreate(savedInstanceState);
         UUID songId = (UUID) getArguments().getSerializable(ARG_SONG_ID);
         mSong = SongLab.get(getActivity()).getSong(songId);
+        String songOrder = mSong.getOrder();
+        if (mPlayer != null && mPlayer.isPlaying()) {
+            mPlayer.stop();
+        }
+
+        mPlayer = MediaPlayer.create(getContext(), SongPagerActivity.musicList[Integer.parseInt(songOrder)-1]);
+        mPlayer.start();
     }
 
     @Override
@@ -78,5 +88,10 @@ public class SongFragment extends Fragment {
             }
         });
         return v;
+    }
+
+    public void onDestroy() {
+        mPlayer.stop();
+        super.onDestroy();
     }
 }

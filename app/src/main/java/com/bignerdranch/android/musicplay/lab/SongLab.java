@@ -39,7 +39,7 @@ public class SongLab {
         one.setDuration("04:05");
         String resone = "";
         try{
-            InputStream inputTwo =  context.getResources().openRawResource(R.raw.first);
+            InputStream inputTwo =  context.getResources().openRawResource(R.raw.one);
             int length = inputTwo.available();
             byte [] buffer = new byte[length];
             inputTwo.read(buffer);
@@ -217,16 +217,16 @@ public class SongLab {
         }
         ten.setSongWords(resten);
 
-        addSong(one);
-        addSong(two);
-        addSong(three);
-        addSong(four);
-        addSong(five);
-        addSong(six);
-        addSong(seven);
-        addSong(eight);
-        addSong(nine);
-        addSong(ten);
+//        addSong(one);
+//        addSong(two);
+//        addSong(three);
+//        addSong(four);
+//        addSong(five);
+//        addSong(six);
+//        addSong(seven);
+//        addSong(eight);
+//        addSong(nine);
+//        addSong(ten);
     }
 
     public void addSong(Song s){

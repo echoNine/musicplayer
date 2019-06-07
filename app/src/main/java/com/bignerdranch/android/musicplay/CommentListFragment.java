@@ -115,7 +115,6 @@ public class CommentListFragment extends Fragment {
     }
 
     private void updateUI() {
-        //如何在这里获取到 CommentListActivity.EXTRA_SONG_ID
 
         CommentLab commentLab = CommentLab.get(getActivity());
         List<Comment> comments = commentLab.getCommentsBySong(this.songName);

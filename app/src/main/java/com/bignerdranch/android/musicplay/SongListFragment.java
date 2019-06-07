@@ -77,7 +77,10 @@ public class SongListFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
+            Bundle bundle = new Bundle();
+            bundle.putString("order", mSong.getOrder());
             Intent intent = SongPagerActivity.newIntent(getActivity(),mSong.getId());
+            intent.putExtras(bundle);
             startActivity(intent);
         }
     }

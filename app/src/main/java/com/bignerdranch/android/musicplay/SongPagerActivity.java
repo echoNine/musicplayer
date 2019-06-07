@@ -2,6 +2,7 @@ package com.bignerdranch.android.musicplay;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -17,9 +18,12 @@ import java.util.UUID;
 
 public class SongPagerActivity extends AppCompatActivity {
     private static final String EXTRA_SONG_ID = "com.bignerdranch.android.musicplay.song_id";
+    public static int[] musicList = {R.raw.one_music,R.raw.two_music,R.raw.three_music,R.raw.four_music,R.raw.five_music,R.raw.six_music,R.raw.seven_music,R.raw.eight_music,R.raw.nine_music,R.raw.ten_music};
 
     private ViewPager mViewPager;
     private List<Song> mSongs;
+    public static MediaPlayer mPlayer;
+    private String songOrder;
 
     public static Intent newIntent(Context packageContext, UUID songId) {
         Intent intent = new Intent(packageContext, SongPagerActivity.class);
