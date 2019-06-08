@@ -24,6 +24,7 @@ public class SongCursorWrapper extends CursorWrapper {
         String song_unit = getString(getColumnIndex(SongTable.Cols.SONG_UNIT));
         String duration = getString(getColumnIndex(SongTable.Cols.DURATION));
         String song_words = getString(getColumnIndex(SongTable.Cols.SONG_WORDS));
+        String music = getString(getColumnIndex(SongTable.Cols.MUSIC));
 
         Song song = new Song(UUID.fromString(uuidString));
         song.setOrder(song_order);
@@ -32,6 +33,7 @@ public class SongCursorWrapper extends CursorWrapper {
         song.setSongUnit(song_unit);
         song.setDuration(duration);
         song.setSongWords(song_words);
+        song.setMusic(music);
 
         return song;
     }

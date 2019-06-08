@@ -1,10 +1,11 @@
 package com.bignerdranch.android.musicplay;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
+import android.content.res.AssetFileDescriptor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +15,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.UUID;
 
 import com.bignerdranch.android.musicplay.dao.Song;
 import com.bignerdranch.android.musicplay.lab.SongLab;
-
-import static com.bignerdranch.android.musicplay.SongPagerActivity.mPlayer;
 
 public class SongFragment extends Fragment {
 
@@ -42,18 +42,29 @@ public class SongFragment extends Fragment {
         return fragment;
     }
 
+    public void replay (UUID songId) {
+        mSong = SongLab.get(getActivity()).getSong(songId);
+        if (SongPagerActivity.getPlayer().isPlaying()) {
+            SongPagerActivity.getPlayer().stop();
+            SongPagerActivity.destroyPlayer();
+        }
+
+        try {
+            Log.e(this.getClass().getName(), mSong.getMusic());
+            AssetFileDescriptor fd = getContext().getAssets().openFd(mSong.getMusic());
+            SongPagerActivity.getPlayer().setDataSource(fd.getFileDescriptor(), fd.getStartOffset(), fd.getLength());
+            SongPagerActivity.getPlayer().prepare();
+            SongPagerActivity.getPlayer().start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         UUID songId = (UUID) getArguments().getSerializable(ARG_SONG_ID);
         mSong = SongLab.get(getActivity()).getSong(songId);
-        String songOrder = mSong.getOrder();
-        if (mPlayer != null && mPlayer.isPlaying()) {
-            mPlayer.stop();
-        }
-
-        mPlayer = MediaPlayer.create(getContext(), SongPagerActivity.musicList[Integer.parseInt(songOrder)-1]);
-        mPlayer.start();
     }
 
     @Override
@@ -87,11 +98,13 @@ public class SongFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        this.replay(mSong.getId());
         return v;
     }
 
     public void onDestroy() {
-        mPlayer.stop();
+        SongPagerActivity.getPlayer().stop();
         super.onDestroy();
     }
 }

@@ -1,0 +1,38 @@
+[
+  {
+    "order" : "1",
+    "singer" : "胡夏",
+    "songName" : "凹凸",
+    "songUnit" : "大雨文化",
+    "duration" : "04:05",
+    "songWordsAssetsFileName" : "aotu_words.txt",
+    "songMusicAssetsFileName" : "aotu.mp3"
+  },
+  {
+    "order" : "2",
+    "singer" : "胡夏",
+    "songName" : "念",
+    "songUnit" : "大雨文化",
+    "duration" : "04:29",
+    "songWordsAssetsFileName" : "nian_words.txt",
+    "songMusicAssetsFileName" : "nian.mp3"
+  },
+  {
+    "order" : "3",
+    "singer" : "胡夏",
+    "songName" : "十万灰尘",
+    "songUnit" : "大雨文化",
+    "duration" : "04:29",
+    "songWordsAssetsFileName" : "shiwanhuichen_words.txt",
+    "songMusicAssetsFileName" : "shiwanhuichen.mp3"
+  },
+  {
+    "order" : "4",
+    "singer" : "胡夏",
+    "songName" : "双栖动物",
+    "songUnit" : "大雨文化",
+    "duration" : "04:29",
+    "songWordsAssetsFileName" : "shuangqidongwu_words.txt",
+    "songMusicAssetsFileName" : "shuangqidongwu.mp3"
+  }
+]

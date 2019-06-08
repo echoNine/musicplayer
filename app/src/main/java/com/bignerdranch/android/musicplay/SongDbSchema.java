@@ -12,6 +12,7 @@ public class SongDbSchema {
             public static final String SONG_UNIT = "song_unit";
             public static final String DURATION = "duration";
             public static final String SONG_WORDS = "song_words";
+            public static final String MUSIC = "music";
         }
     }
 

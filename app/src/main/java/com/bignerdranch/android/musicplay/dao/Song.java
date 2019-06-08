@@ -32,6 +32,11 @@ public class Song {
      */
     private String mSongWords;
 
+    /**
+     * 歌曲文件地址
+     */
+    private String music;
+
     public Song() {
         this(UUID.randomUUID());
     }
@@ -94,5 +99,13 @@ public class Song {
 
     public void setSongWords(String songWords) {
         mSongWords = songWords;
+    }
+
+    public String getMusic() {
+        return music;
+    }
+
+    public void setMusic(String music) {
+        this.music = music;
     }
 }
