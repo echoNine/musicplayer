@@ -26,18 +26,31 @@ public class SongPagerActivity extends AppCompatActivity {
     private List<Song> mSongs;
     private static MediaPlayer mPlayer;
 
-    private boolean replayOnNew = true;
-
-    public void setReplayOnNew(boolean replayOnNew) {
-        this.replayOnNew = replayOnNew;
-    }
-
     public static MediaPlayer getPlayer () {
         if (mPlayer == null) {
             mPlayer = new MediaPlayer();
         }
 
         return mPlayer;
+    }
+
+    public void replay (UUID songId) {
+        Song mSong = SongLab.get(this).getSong(songId);
+        if (getPlayer().isPlaying()) {
+            getPlayer().stop();
+            destroyPlayer();
+        }
+
+        try {
+            Log.e(getClass().getName(), mSong.getMusic());
+            AssetFileDescriptor fd = getAssets().openFd(mSong.getMusic());
+            getPlayer().setDataSource(fd.getFileDescriptor(), fd.getStartOffset(), fd.getLength());
+            getPlayer().prepare();
+            getPlayer().setLooping(true);
+            getPlayer().start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void destroyPlayer () {
@@ -58,9 +71,9 @@ public class SongPagerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_song_pager);
         UUID songId = (UUID) getIntent().getSerializableExtra(EXTRA_SONG_ID);
         Bundle bundle = getIntent().getExtras();
-        Log.d(getClass().getName(), bundle.getBoolean("replayOnNew") + "");
-        if (!bundle.getBoolean("replayOnNew")) {
-            this.replayOnNew = false;
+        Log.d(getClass().getName(), bundle.getBoolean("notReplay") + "");
+        if (!bundle.getBoolean("notReplay")) {
+            this.replay(songId);
         }
         mViewPager = (ViewPager) findViewById(R.id.song_view_pager);
 
@@ -70,6 +83,7 @@ public class SongPagerActivity extends AppCompatActivity {
 
             @Override
             public Fragment getItem(int position) {
+                Log.v(this.getClass().getName(), position + "");
                 Song song = mSongs.get(position);
                 return SongFragment.newInstance(song.getId());
             }
@@ -86,9 +100,33 @@ public class SongPagerActivity extends AppCompatActivity {
                 break;
             }
         }
+
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            /**
+             * 滑动事件结束时
+             * @param i
+             */
+            @Override
+            public void onPageSelected(int i) {
+                SongPagerActivity.this.replay(mSongs.get(i).getId());
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
     }
 
-    public boolean isReplayOnNew() {
-        return replayOnNew;
+    @Override
+    public void onDestroy() {
+        SongPagerActivity.getPlayer().stop();
+        SongPagerActivity.destroyPlayer();
+        super.onDestroy();
     }
 }

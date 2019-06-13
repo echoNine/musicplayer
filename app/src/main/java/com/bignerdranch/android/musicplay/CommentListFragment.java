@@ -87,6 +87,7 @@ public class CommentListFragment extends Fragment {
         switch (item.getItemId()) {
             case R.id.return_back:
                 Bundle bundle = new Bundle();
+                bundle.putBoolean("notReplay", true);
                 Song song = ((CommentListActivity)getActivity()).getSong();
                 Intent intent = SongPagerActivity.newIntent(getActivity(),song.getId(), false);
                 intent.putExtras(bundle);

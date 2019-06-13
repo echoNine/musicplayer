@@ -42,24 +42,6 @@ public class SongFragment extends Fragment {
         return fragment;
     }
 
-    public void replay (UUID songId) {
-        mSong = SongLab.get(getActivity()).getSong(songId);
-        if (SongPagerActivity.getPlayer().isPlaying()) {
-            SongPagerActivity.getPlayer().stop();
-            SongPagerActivity.destroyPlayer();
-        }
-
-        try {
-            Log.e(this.getClass().getName(), mSong.getMusic());
-            AssetFileDescriptor fd = getContext().getAssets().openFd(mSong.getMusic());
-            SongPagerActivity.getPlayer().setDataSource(fd.getFileDescriptor(), fd.getStartOffset(), fd.getLength());
-            SongPagerActivity.getPlayer().prepare();
-            SongPagerActivity.getPlayer().start();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,17 +85,7 @@ public class SongFragment extends Fragment {
         });
         SongPagerActivity SongPage = (SongPagerActivity)getActivity();
 
-        if (SongPage.isReplayOnNew()) {
-            this.replay(mSong.getId());//here
-        }
-        SongPage.setReplayOnNew(true);
-
+        Log.v(this.getClass().getName(), mSong.getSongName());
         return v;
-    }
-
-    public void onDestroy() {
-        SongPagerActivity.getPlayer().stop();
-        SongPagerActivity.destroyPlayer();
-        super.onDestroy();
     }
 }
