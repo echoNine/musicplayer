@@ -1,0 +1,110 @@
+[
+  {
+    "order" : "1",
+    "singer" : "胡夏",
+    "songName" : "念",
+    "songUnit" : "大雨文化",
+    "duration" : "04:55",
+    "songWordsAssetsFileName" : "nian_words.txt",
+    "songMusicAssetsFileName" : "nian.mp3"
+  },
+  {
+    "order" : "2",
+    "singer" : "胡夏",
+    "songName" : "阅读爱情",
+    "songUnit" : "大雨文化",
+    "duration" : "04:50",
+    "songWordsAssetsFileName" : "yuedu_words.txt",
+    "songMusicAssetsFileName" : "yueduaiqing.mp3"
+  },
+  {
+    "order" : "3",
+    "singer" : "胡夏",
+    "songName" : "十万灰尘",
+    "songUnit" : "大雨文化",
+    "duration" : "04:05",
+    "songWordsAssetsFileName" : "shiwanhuichen_words.txt",
+    "songMusicAssetsFileName" : "shiwanhuichen.mp3"
+  },
+  {
+    "order" : "4",
+    "singer" : "胡夏",
+    "songName" : "偕老",
+    "songUnit" : "大雨文化",
+    "duration" : "04:34",
+    "songWordsAssetsFileName" : "xielao_words.txt",
+    "songMusicAssetsFileName" : "xielao.mp3"
+  },
+  {
+    "order" : "5",
+    "singer" : "胡夏",
+    "songName" : "炸弹诗",
+    "songUnit" : "大雨文化",
+    "duration" : "04:13",
+    "songWordsAssetsFileName" : "zhadanshi_words.txt",
+    "songMusicAssetsFileName" : "zhadanshi.mp3"
+  },
+  {
+    "order" : "6",
+    "singer" : "胡夏",
+    "songName" : "昙花",
+    "songUnit" : "大雨文化",
+    "duration" : "03:51",
+    "songWordsAssetsFileName" : "tanhua_words.txt",
+    "songMusicAssetsFileName" : "tanhua.mp3"
+  },
+  {
+    "order" : "7",
+    "singer" : "胡夏",
+    "songName" : "羞答答的玫瑰静悄悄地开",
+    "songUnit" : "大雨文化",
+    "duration" : "03:33",
+    "songWordsAssetsFileName" : "xiudada_words.txt",
+    "songMusicAssetsFileName" : "xiudada.mp3"
+  },
+  {
+    "order" : "8",
+    "singer" : "胡夏",
+    "songName" : "寻人启事",
+    "songUnit" : "大雨文化",
+    "duration" : "05:16",
+    "songWordsAssetsFileName" : "xunren_words.txt",
+    "songMusicAssetsFileName" : "xunrenqishi.mp3"
+  },
+  {
+    "order" : "9",
+    "singer" : "胡夏",
+    "songName" : "凹凸",
+    "songUnit" : "大雨文化",
+    "duration" : "03:33",
+    "songWordsAssetsFileName" : "aotu_words.txt",
+    "songMusicAssetsFileName" : "aotu.mp3"
+  },
+  {
+    "order" : "10",
+    "singer" : "胡夏",
+    "songName" : "双栖动物",
+    "songUnit" : "大雨文化",
+    "duration" : "04:55",
+    "songWordsAssetsFileName" : "shuangqidongwu_words.txt",
+    "songMusicAssetsFileName" : "shuangqidongwu.mp3"
+  },
+  {
+    "order" : "11",
+    "singer" : "胡夏",
+    "songName" : "同类",
+    "songUnit" : "大雨文化",
+    "duration" : "03:46",
+    "songWordsAssetsFileName" : "tonglei_words.txt",
+    "songMusicAssetsFileName" : "tonglei.mp3"
+  },
+  {
+    "order" : "12",
+    "singer" : "胡夏",
+    "songName" : "知道不知道",
+    "songUnit" : "大雨文化",
+    "duration" : "03:45",
+    "songWordsAssetsFileName" : "zhidaobu_words.txt",
+    "songMusicAssetsFileName" : "zhidaobu.mp3"
+  }
+]
